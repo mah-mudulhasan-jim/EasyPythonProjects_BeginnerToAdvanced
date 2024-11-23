@@ -14,3 +14,9 @@ if __name__ == '__main__':
     print_hi('PyCharm')
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# some basic operations in python with string
+
+### Subscripting
+print("Hello"[0])
+#
+print(171_21372_6776)
