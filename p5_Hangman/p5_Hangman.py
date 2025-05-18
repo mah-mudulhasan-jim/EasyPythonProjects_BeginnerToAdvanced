@@ -19,7 +19,6 @@ while life != 0 and not win:
     user = input("Guess a letter: ").lower()
     if user not in input_arr:
         input_arr.append(user)
-        print(1, input_arr)
         if len(user) != 1:
             print("Enter only 1 letter")
             print(stage[stage_index])
