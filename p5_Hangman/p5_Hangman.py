@@ -2,7 +2,8 @@ from HangManWords import words
 import random
 from helpingFunction import arr_to_str, str_to_arr
 from stages import stage
-
+from banner import banner
+print(banner)
 print("Welcome to HangMan. Remember that man's life depends on your guessing!!")
 
 chosenWord = random.choice(words)
