@@ -18,23 +18,29 @@ def main():
 def encrypt(text, shift, alphabet):
     st = ''
     for i in text:
-        index = (shift + alphabet.index(i)) % len(alphabet)
-        st += alphabet[index]
+        if i not in alphabet:
+            st += i
+        else:
+            index = (shift + alphabet.index(i)) % len(alphabet)
+            st += alphabet[index]
     print(f"Encrypted text: {st}")
 
 
 def decrypt(text, shift, alphabet):
     st = ''
     for i in text:
-        index = (alphabet.index(i) - shift)
-        st += alphabet[index]
+        if i not in alphabet:
+            st += i
+        else:
+            index = (alphabet.index(i) - shift)
+            st += alphabet[index]
     print(f"Decrypted Text: {st}")
 
 if __name__ == "__main__":
     from banner import ban
     print(ban)
     main()
-    user = input("Type 'yes' if you want to go again. Otherwise 'no'").lower()
+    user = input("Type 'yes' if you want to go again. Otherwise 'no': ").lower()
     if user == 'yes':
         main()
     else:
