@@ -1,10 +1,10 @@
 from HangManWords import words
 import random
 from helpingFunction import arr_to_str, str_to_arr
-from stages import stage
+from stages import stage, fresh
 from banner import banner
 print(banner)
-print("Welcome to HangMan. Remember that man's life depends on your guessing!!")
+print(f"Welcome to HangMan. Remember that man's {fresh} life depends on your guessing!!")
 
 chosenWord = random.choice(words)
 # print(chosenWord)
