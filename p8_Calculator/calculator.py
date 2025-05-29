@@ -34,9 +34,11 @@ def calculate():
         else:
             val = calDict[operation](num1, num2)
             print(f"{num1} {operation} {num2} = {val}")
-        choice = input("Type 'y' to continue calculating with 18.0, or type 'n' to start a new calculation: ")
+        choice = input("Type 'y' to continue calculating with 18.0, or type 'n' to start a new calculation, or type 't' to terminate: ")
         if choice == 'y':
             num1 = val
+        elif choice == 't':
+            break
         else:
             # flag = False
             print("\n" * 100)
