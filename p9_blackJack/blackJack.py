@@ -2,91 +2,91 @@ from banner9 import banner
 import random
 
 def calculateSum(card):
-    sum = 0
+    total = 0
     for i in card:
         if i == 'J' or i == 'Q' or i == 'K':
-            sum += 10
+            total += 10
         elif i == 'A':
-            if sum < 11:
-                sum += 11
+            if total < 11:
+                total += 11
             else:
-                sum += 1
+                total += 1
         else:
-            sum += i
-    return sum
+            total += i
+    return total
 
-def stand(computerCard, cards):
-    if calculateSum(computerCard) == 21:
+def stand(computer_card, cards):
+    if calculateSum(computer_card) == 21:
         return 21
     else:
         cflag = True
         while cflag:
-            computerCard.append(random.choice(cards))
-            if calculateSum(computerCard) >= 17:
+            computer_card.append(random.choice(cards))
+            if calculateSum(computer_card) >= 17:
                 cflag = False
-        return calculateSum(computerCard)
+        return calculateSum(computer_card)
 
-def hit(playerCard, cards):
-    playerCard.append(random.choice(cards))
-    return playerCard
+def hit(player_card, cards):
+    player_card.append(random.choice(cards))
+    return player_card
 
 
 def playBlackJack():
     print(banner)
     cards = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A']
-    playerCard = random.sample(cards, 2)
-    # playerCard = ['A', 6]
-    computerCard = random.sample(cards, 2)
-    print(f"    Your cards: {playerCard}, current score: {calculateSum(playerCard)}")
-    print(f"    Computer's first card: {computerCard[0]}")
-    if calculateSum(playerCard) == 21:
+    player_card = random.sample(cards, 2)
+    # player_card = ['A', 6]
+    computer_card = random.sample(cards, 2)
+    print(f"    Your cards: {player_card}, current score: {calculateSum(player_card)}")
+    print(f"    Computer's first card: {computer_card[0]}")
+    if calculateSum(player_card) == 21:
         print("    You win! It's a BlackJack")
     else:
-        playerTurn = input("Type 'y' to get another card, type 'n' to pass: ")
-        if playerTurn != 'y':
-            computerScore = stand(computerCard, cards)
-            if computerScore > calculateSum(playerCard) and computerScore <= 21:
-                print(f"    Your final hand: {playerCard}, final score: {calculateSum(playerCard)}")
-                print(f"    Computer's Final hand: {computerCard}, final score: {calculateSum(computerCard)}")
+        player_turn = input("Type 'y' to get another card, type 'n' to pass: ")
+        if player_turn != 'y':
+            comp_score = stand(computer_card, cards)
+            if calculateSum(player_card) < comp_score <= 21:
+                print(f"    Your final hand: {player_card}, final score: {calculateSum(player_card)}")
+                print(f"    Computer's Final hand: {computer_card}, final score: {calculateSum(computer_card)}")
                 print("You LOSE")
-            elif computerScore > 21:
-                print(f"    Your final hand: {playerCard}, final score: {calculateSum(playerCard)}")
-                print(f"    Computer's Final hand: {computerCard}, final score: {calculateSum(computerCard)}")
+            elif comp_score > 21:
+                print(f"    Your final hand: {player_card}, final score: {calculateSum(player_card)}")
+                print(f"    Computer's Final hand: {computer_card}, final score: {calculateSum(computer_card)}")
                 print("Opponent went over. You WIN")
-            elif computerScore < calculateSum(playerCard):
-                print(f"    Your final hand: {playerCard}, final score: {calculateSum(playerCard)}")
-                print(f"    Computer's Final hand: {computerCard}, final score: {calculateSum(computerCard)}")
+            elif comp_score < calculateSum(player_card):
+                print(f"    Your final hand: {player_card}, final score: {calculateSum(player_card)}")
+                print(f"    Computer's Final hand: {computer_card}, final score: {calculateSum(computer_card)}")
                 print("You WIN")
         else:
-            plFlag = True
-            while plFlag:
-                playerCard = hit(playerCard, cards)
-                print(f"    Your cards: {playerCard}, current score: {calculateSum(playerCard)}")
-                print(f"    Computer's first card: {computerCard[0]}")
-                if calculateSum(playerCard) > 21:
-                    print(f"    Your final hand: {playerCard}, final score: {calculateSum(playerCard)}")
-                    print(f"    Computer's Final hand: {computerCard}, final score: {calculateSum(computerCard)}")
+            pl_flag = True
+            while pl_flag:
+                player_card = hit(player_card, cards)
+                print(f"    Your cards: {player_card}, current score: {calculateSum(player_card)}")
+                print(f"    Computer's first card: {computer_card[0]}")
+                if calculateSum(player_card) > 21:
+                    print(f"    Your final hand: {player_card}, final score: {calculateSum(player_card)}")
+                    print(f"    Computer's Final hand: {computer_card}, final score: {calculateSum(computer_card)}")
                     print("You went OVER. You LOSE")
                     break
                 else:
-                    playerTurn = input("Type 'y' to get another card, type 'n' to pass: ")
-                    if playerTurn != 'y':
-                        plFlag = False
-                        computerScore = stand(computerCard, cards)
-                        if computerScore > calculateSum(playerCard) and computerScore <= 21:
-                            print(f"    Your final hand: {playerCard}, final score: {calculateSum(playerCard)}")
+                    player_turn = input("Type 'y' to get another card, type 'n' to pass: ")
+                    if player_turn != 'y':
+                        pl_flag = False
+                        comp_score = stand(computer_card, cards)
+                        if calculateSum(player_card) < comp_score <= 21:
+                            print(f"    Your final hand: {player_card}, final score: {calculateSum(player_card)}")
                             print(
-                                f"    Computer's Final hand: {computerCard}, final score: {calculateSum(computerCard)}")
+                                f"    Computer's Final hand: {computer_card}, final score: {calculateSum(computer_card)}")
                             print("You LOSE")
-                        elif computerScore > 21:
-                            print(f"    Your final hand: {playerCard}, final score: {calculateSum(playerCard)}")
+                        elif comp_score > 21:
+                            print(f"    Your final hand: {player_card}, final score: {calculateSum(player_card)}")
                             print(
-                                f"    Computer's Final hand: {computerCard}, final score: {calculateSum(computerCard)}")
+                                f"    Computer's Final hand: {computer_card}, final score: {calculateSum(computer_card)}")
                             print("Opponent went over. You WIN")
-                        elif computerScore < calculateSum(playerCard):
-                            print(f"    Your final hand: {playerCard}, final score: {calculateSum(playerCard)}")
+                        elif comp_score < calculateSum(player_card):
+                            print(f"    Your final hand: {player_card}, final score: {calculateSum(player_card)}")
                             print(
-                                f"    Computer's Final hand: {computerCard}, final score: {calculateSum(computerCard)}")
+                                f"    Computer's Final hand: {computer_card}, final score: {calculateSum(computer_card)}")
                             print("You WIN")
 gameFlag = True
 while gameFlag:
