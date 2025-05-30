@@ -35,8 +35,9 @@ def playBlackJack():
     print(banner)
     cards = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A']
     player_card = random.sample(cards, 2)
-    # player_card = ['A', 6]
+    # player_card = [10, 10]
     computer_card = random.sample(cards, 2)
+    # computer_card = [10, 10]
     print(f"    Your cards: {player_card}, current score: {calculateSum(player_card)}")
     print(f"    Computer's first card: {computer_card[0]}")
     if calculateSum(player_card) == 21:
