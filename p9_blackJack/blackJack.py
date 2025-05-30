@@ -57,6 +57,10 @@ def playBlackJack():
                 print(f"    Your final hand: {player_card}, final score: {calculateSum(player_card)}")
                 print(f"    Computer's Final hand: {computer_card}, final score: {calculateSum(computer_card)}")
                 print("You WIN")
+            elif comp_score == calculateSum(player_card):
+                print(f"    Your final hand: {player_card}, final score: {calculateSum(player_card)}")
+                print(f"    Computer's Final hand: {computer_card}, final score: {calculateSum(computer_card)}")
+                print("It's a DRAW")
         else:
             pl_flag = True
             while pl_flag:
@@ -88,6 +92,11 @@ def playBlackJack():
                             print(
                                 f"    Computer's Final hand: {computer_card}, final score: {calculateSum(computer_card)}")
                             print("You WIN")
+                        elif comp_score == calculateSum(player_card):
+                            print(f"    Your final hand: {player_card}, final score: {calculateSum(player_card)}")
+                            print(
+                                f"    Computer's Final hand: {computer_card}, final score: {calculateSum(computer_card)}")
+                            print("It's a DRAW")
 gameFlag = True
 while gameFlag:
     user = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ")
