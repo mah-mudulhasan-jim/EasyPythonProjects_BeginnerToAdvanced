@@ -42,6 +42,7 @@ def main():
                 'pennies': 0.01
             }
             price = sum(int(input(f"How many {i}?: ")) * values[i] for i in arr)
+            price = round(price, 2)
             if price > MENU[user_choice]['cost']:
                 print(f"Here is ${price - MENU[user_choice]['cost']} in change")
                 RESOURCE['Money'] += MENU[user_choice]['cost']
