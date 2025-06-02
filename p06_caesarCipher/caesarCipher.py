@@ -36,6 +36,7 @@ def decrypt(text, shift, alphabet):
             st += alphabet[index]
     print(f"Decrypted Text: {st}")
 
+
 if __name__ == "__main__":
     from banner import ban
     print(ban)
