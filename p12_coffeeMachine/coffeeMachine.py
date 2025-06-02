@@ -3,6 +3,7 @@ from banner12 import banner
 
 
 def is_resource_suffice(resource, item):
+    """checks if the resource is sufficient to deliver the coffee or not"""
     # print(item["ingredients"])
     # print('bug: ', resource)
     for ingredient in item["ingredients"]:
