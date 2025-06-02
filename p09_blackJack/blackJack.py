@@ -1,6 +1,7 @@
 from banner9 import banner
 import random
 
+
 def calculateSum(card):
     total = 0
     for i in card:
@@ -15,6 +16,7 @@ def calculateSum(card):
             total += i
     return total
 
+
 def stand(computer_card, cards):
     if calculateSum(computer_card) == 21:
         return 21
@@ -25,6 +27,7 @@ def stand(computer_card, cards):
             if calculateSum(computer_card) >= 17:
                 cflag = False
         return calculateSum(computer_card)
+
 
 def hit(player_card, cards):
     player_card.append(random.choice(cards))
