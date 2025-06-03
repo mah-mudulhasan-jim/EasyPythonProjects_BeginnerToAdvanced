@@ -2,7 +2,7 @@ import random
 from game_data import data
 from banner11 import higher_lower, vs
 
-# score = 0
+
 def create_option():
     # print(higher_lower)
     compare_arr =  random.sample(data, 2)
@@ -12,6 +12,7 @@ def create_option():
     print(vs)
     print(f"Against B: {opt2['name']}, a {opt2['description']}, from {opt2['country']}")
     return opt1, opt2
+
 
 def main():
     print(higher_lower)
@@ -53,10 +54,6 @@ def main():
             print(higher_lower)
             print(f"Sorry That's Wrong. Final score: {score}")
             flag = False
-
-
-
-
 
 
 main()

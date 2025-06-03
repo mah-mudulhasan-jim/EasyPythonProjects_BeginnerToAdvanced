@@ -1,4 +1,6 @@
 from banner7 import banner
+
+
 def secretAuction(dict):
     max = 0
     maxPlayer = ''
@@ -7,6 +9,7 @@ def secretAuction(dict):
             max = dict[key]
             maxPlayer = key
     print(f"The winner is {maxPlayer} with a bid of ${max}")
+
 
 def main():
     playerAvailable = True
@@ -27,7 +30,6 @@ def main():
             if availableCheck == 'yes':
                 print("\n" * 100)
     secretAuction(auctionDict)
-
 
 
 if __name__ == "__main__":

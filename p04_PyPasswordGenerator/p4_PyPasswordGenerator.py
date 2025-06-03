@@ -32,6 +32,7 @@ def passGenerator1(nLetter,nNum, nSym):
   print(len(password))
   return password
 
+
 def passGenerator2(nLetter, nNum, nSym): # More efficient
     letters = list(string.ascii_lowercase)
     numbers = list("0123456789")

@@ -1,5 +1,6 @@
 import random
 from banner10 import banner
+
 def guess_number(num):
     guess = int(input("Make a guess: "))
     if  guess == num:
@@ -39,6 +40,7 @@ def main():
             remain -= 1
     print("You've run out of guesses. Refresh the page to run again.")
     return
+
 
 if __name__ == "__main__":
     main()
